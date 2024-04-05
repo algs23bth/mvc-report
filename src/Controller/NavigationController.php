@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-
 class NavigationController extends AbstractController
 {
     #[Route("/lucky", name: "lucky")]
@@ -33,13 +32,13 @@ class NavigationController extends AbstractController
     #[Route("/", name: "home")]
     public function home(): Response
     {
-    return $this->render('home.html.twig');
+        return $this->render('home.html.twig');
     }
 
     #[Route("/about", name: "about")]
     public function about(): Response
     {
-    return $this->render('about.html.twig');
+        return $this->render('about.html.twig');
     }
 
 
@@ -47,13 +46,13 @@ class NavigationController extends AbstractController
     #[Route("/report", name: "report")]
     public function report(): Response
     {
-    return $this->render('report.html.twig');
+        return $this->render('report.html.twig');
     }
 
     #[Route("/api", name: "api")]
     public function jsonRoutes(): Response
     {
-    return $this->render('json_routes.html.twig');
+        return $this->render('json_routes.html.twig');
     }
 
     #[Route("/api/lucky", name:"api/lucky")]
@@ -103,5 +102,3 @@ class NavigationController extends AbstractController
         return $response;
     }
 }
-
-
