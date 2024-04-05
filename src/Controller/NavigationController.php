@@ -91,8 +91,8 @@ class NavigationController extends AbstractController
         $timestamp = time();
         $data = [
             'quote' => $quoteList[$number],
-            'generated-date' => $currentDate,
-            'timestamp' => $timestamp
+            'current-date' => $currentDate,
+            'timestamp' => date('Y-m-d H:i:s', $timestamp)
         ];
 
         $response = new JsonResponse($data);
