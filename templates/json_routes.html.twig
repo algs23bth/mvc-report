@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}JSON routes{% endblock %}
+
+{% block body %}
+<div class="card">
+<h1>Se alla våra JSON-routes</h1>
+   <ul>
+        <li><a href="{{ path('api/quote') }}">Citat</a></li>
+        <li><a href="{{ path('api/lucky') }}">Slumpat tal</a></li>
+    </ul>
+</div>
+{% endblock %}
