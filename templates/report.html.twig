@@ -12,7 +12,22 @@
 <div class="report-box">
 <h2 id="kmom01">kmom01</h2>
 
-<p>-</p>
+<p>Jag har arbetat med objektorienterad programmering innan i Javascript och Python. Objektorienteringen i PHP är rätt så lik den i de förutnämnda språken. 
+
+
+De två grundläggande aspekten av objektorienterad programmering är objekt och klasser.
+Inom objektorientering så skapas objekt som innehåller data och funktioner. Dessa objekt skapas utifrån klasser. Klasser fungerar som en "mall" för objekten och objekten kallas för "instanser". 
+
+Ett exempel på något som vi kan koda som klasser och objekt: en bok. "Bok" är klassen, den "abstrakta" formen som det finns instanser av. En bok kan ha en titel, en författare, ett genre, etc. En individuell bok kan då vara ett objekt och informationen (författare, titel, etc) är medlemsvariablerna. "Metoder" är funktionerna i ett objekt och det är genom dem man interagerar med objektet. Metoderna skapas i klassen. Exempelvis kan "bok-klassen" ha en metod för att lägga boken i en hylla. Då kan man använda "lägga-i-hylla"-metoden på bok-instansen.
+
+I min kod används klasser men (NavigationController) men ej objekt. Man kan använda klasser för att dela upp funktioner. Så även om detta program använder klasser så är det inte nödvändigtvis ett typexempel för objektorienterad programmering.
+
+
+Min sidas kodstruktur bygger på "Model-View-Controller"-mönstret. Syftet med MVC är att separera ett programs logik och presentation. "Kontrollern" tar emot förfrågningar och returnerar en respons. Min "kontroller" är NavigationController.php, den tar emot HTTP-förfrågningar och returnerar en respons som en hemsida. Det är det som sker i alla route-metoder. Vår "View" i vår MVC är våra Twig-filer. Det är inte mycket data som används, men man kan säga att "modellen" är koden i NavigationControllers metoder (i /lucky, api/lucky och api/quote). Dock är jag inte helt säker på detta, då datan som ska skickas skapas direkt i route-funktionerna, så denna funktionalitet kan möjligtvis ses som del av Controller. Det som talar för att koden i metoderna ska kunna anses som Model är då att informationen är "självständig" (bygger på random-nummer), dvs det är inte kod för funktionalitet direkt relaterad till skickandet av data.
+
+MVC berörs i vissa delar av “PHP The Right Way”-artikeln. Exempelvis lär vi oss att "templates" används som "views". Templates ansvarar enbart för att visa formatterat innehåll, ingenting mer.
+
+Mitt TIL för detta kmom är MVC-mönstret, det verkar som ett smart sätt att strukturera kod på.</p>
 </div>
 </div>
 
