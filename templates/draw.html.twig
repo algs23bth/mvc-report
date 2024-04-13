@@ -1,0 +1,19 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+
+{% block body %}
+<div class="card">
+    {% if cardsMessage is defined %}
+       <h1>{{ cardsMessage }} </h1>
+    {% else %}
+        {% for card in hand %}
+                    <h1>{{ card }}</h1>
+                {% endfor %}
+            <br>
+            <h1>You have {{ cardsInDeck }} cards left in deck</h1>
+    {% endif %}
+</div>
+{% endblock %}
+

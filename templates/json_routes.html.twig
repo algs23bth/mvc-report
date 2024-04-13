@@ -8,6 +8,31 @@
    <ul>
         <li><a href="{{ path('api/quote') }}">Citat</a></li>
         <li><a href="{{ path('api/lucky') }}">Slumpat tal</a></li>
+
+          <form action="{{ path('api/card/deck') }}" method="get">
+    <input type="submit" value="Deck" onClick="this.form.action='{{ path('api/card/deck') }}';">
+</form>
+       <form action="{{ path('api/card/deck/draw') }}" method="post">
+    <input type="submit" value="Draw 1" onClick="this.form.action='{{ path('api/card/deck/draw') }}';">
+</form>
+
+<form action="{{ path('api/card/deck/draw', { num: 5 }) }}" method="post">
+    <input type="submit" value="Draw 5" onClick="this.form.action='{{  path('api/card/deck/draw', { num: 5 }) }}';">
+</form>
+
+
+<form action="{{ path('api/card/deck/draw', { num: 10 }) }}" method="post">
+    <input type="submit" value="Draw 10" onClick="this.form.action='{{  path('api/card/deck/draw', { num: 10 }) }}';">
+</form>
+
+
+      <form action="{{ path('api/card/deck/shuffle') }}" method="post">
+    <input type="submit" value="Shuffle" onClick="this.form.action='{{ path('api/card/deck/shuffle') }}';">
+</form>
+  
+
+
+       
     </ul>
 </div>
 {% endblock %}

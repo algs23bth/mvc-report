@@ -1,0 +1,88 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card routes{% endblock %}
+
+{% block body %}
+<div class="card">
+<h1>Se alla våra card-routes</h1>
+   <ul>
+        <li><a href="{{ path('card/deck') }}">Deck</a></li>
+        <li><a href="{{ path('card/deck/draw') }}">Draw 1</a></li>
+        <li><a href="{{ path('card/deck/draw', { num: 5 }) }}">Draw 5</a></li>
+        <li><a href="{{ path('card/deck/draw', {num: 10}) }}">Draw 10</a></li>
+        <li><a href="{{ path('card/deck/shuffle') }}">Shuffle</a></li>
+
+    </ul>
+    <h1>UML</h1>
+    Card är en klass för spelkortet. CardGraphic skapar grafik till kortet och ärver från Card. CardHand och DeckOfCards har en kompositionsrelation till Card. Dvs att CardHand och DeckOfCards "äger" Card-objekt.
+    CardHand skapar kort-objekt (CardGraphic) i metoden getString och DeckOfCards lagrar kortobjekt (också CardGraphic) i graphicDeck. Om instanser av CardHand eller DeckOfCards förstörs så försvinner även korten kopplade till objektet.
+    <code>
+    <pre>
++------------------+
+|                  |
+|      Card        |
++------------------+
+| -suit: string    |
+| -rank: string    |
+| -suits: array    |
+| -ranks: array    |
++------------------+
+| +__construct()   |
+| +getRank(): int  |
+| +getSuit(): int  |
+| +getAsString():  |
+|  string          |
++------------------+
+</pre>
+</code>
+<code>
+<pre>
+ ________________________________________________________
+|                     CardGraphic                        |
+|________________________________________________________|
+| - suitToSymbol: array                                  |
+|________________________________________________________|
+| + __construct(suit: ?string, rank: ?string)            |
+| + getAsString(): string                                |
+|________________________________________________________|
+</pre>
+</code>
+<code>
+<pre>
+ _________________________
+|      CardHand           |
+|-------------------------|
+| - hand: array           |
+|-------------------------|
+| + draw(num: int, deck:  |
+|   array): void          |
+|  + getHand(): array     |
+| + getString(): array    |
+ -------------------------
+
+
+</pre>
+
+ </code>
+
+ <code>
+ <pre>
+ --------------------------------
+|          DeckOfCards          |
+--------------------------------
+| - graphicDeck: array          |
+| - deck: array                 |
+| # suits: array                |
+| # ranks: array                |
+--------------------------------
+| + __construct(deck: array)    |
+| + shuffleDeck(): void         |
+| + createGraphicDeck(): void   |
+| + getString(): array          |
+| + getDeckArray(): array       |
+--------------------------------
+</pre>
+</code>
+
+</div>
+{% endblock %}
